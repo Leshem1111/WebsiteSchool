@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="form.aspx.cs" Inherits="_Default" %>
 
 <!DOCTYPE html>
 
@@ -8,8 +8,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-        </div>
+        <p>Enter Name</p>
+        <input type="text"/>  
     </form>
 </body>
 </html>
