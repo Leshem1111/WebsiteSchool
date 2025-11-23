@@ -7,13 +7,73 @@
     <title></title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style>
+        .table_component {
+    overflow: auto;
+    width: 100%;
+}
+
+.table_component table {
+    border: 0px solid #dededf;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: center;
+}
+
+.table_component caption {
+    caption-side: top;
+    text-align: center;
+}
+
+.table_component th {
+    border: 0px solid #dededf;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 5px;
+}
+
+.table_component td {
+    border: 0px solid #dededf;
+    background-color: #969696;
+    color: #000000;
+    padding: 5px;
+}
+    </style>
 </head>
 <body>
-    <form id="form1" runat="server">
->
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </form>
+    <div class="table_component" role="region" tabindex="0">
+<table>
+    
+    <thead>
+        <tr>
+            <th colspan="7">
+                            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+                    <td><a href="Home.aspx"><img src="images/home.png" height="50"/></a></td>
+                    <td><a href="Info.aspx"><img src="images/info.png" height="50"/></a></td>
+                    <td><a href="Admin.aspx"><img src="images/admin.png" height="50"/></a></td>
+                    <td><a href="gallery.aspx"><img src="images/gallery.png" height="50"/></a></td>
+                    <td><a href="RefreshInfo.aspx"><img src="images/refreshInfo.png" height="50"/></a></td>
+                    <td><a href="register.aspx"><img src="images/signin.png" height="50"/></a></td>
+                    <td><a href="SignIn.aspx"><img src="images/exit.png" height="50"/></a></td>
+        </tr>
+    </tbody>
+</table>
+<div style="margin-top:8px"></div>
+</div>
+
+
+    <div style="margin-top:40px; padding:20px;">
+    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+</div>
+
+ 
 </body>
 </html>
