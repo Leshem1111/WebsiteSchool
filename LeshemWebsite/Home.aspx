@@ -3,11 +3,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <p>Home</p>
+    <h1>Home</h1>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 
     <h1  style="text-align:center">This is an Home page</h1>
-    <h3>This is a page for home</h3>
+    <%=tableKefel %>
 
 </asp:Content>
