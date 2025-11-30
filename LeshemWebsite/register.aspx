@@ -9,5 +9,4 @@
 
     <h1  style="text-align:center">This is an Registeration page</h1>
     <h3>This is a page for register</h3>
-
 </asp:Content>
