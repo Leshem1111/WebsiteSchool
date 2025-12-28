@@ -3,11 +3,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <h1>Refresh Info</h1>
+    <h1>Sign In</h1>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h1  style="text-align:center">This is a page for refreshing info</h1>
-    <h3>This is a page for refreshing info</h3>
+    <h1  style="text-align:center">This is a page for signing in</h1>
+    <h3>This is a page for signing in</h3>
 
 </asp:Content>

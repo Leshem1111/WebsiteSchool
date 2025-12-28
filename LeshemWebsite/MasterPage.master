@@ -1,80 +1,89 @@
-﻿
-<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
 <!DOCTYPE html>
-
 <html>
 <head runat="server">
     <title></title>
-    <asp:ContentPlaceHolder id="head" runat="server">
-    </asp:ContentPlaceHolder>
+
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+
     <style>
-        .table_component {
-    overflow: auto;
-    width: 100%;
-}
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #e0e0e0;
+            font-family: Arial;
+        }
 
-.table_component table {
-    border: 0px solid #dededf;
-    height: 100%;
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: collapse;
-    border-spacing: 1px;
-    text-align: center;
-}
+        table {
+            width: 100%;
+            height: 100%;
+            border-collapse: collapse;
+        }
 
-.table_component caption {
-    caption-side: top;
-    text-align: center;
-}
+        tr {
+            border-bottom: 3px solid #000;
+        }
 
-.table_component th {
-    border: 0px solid #dededf;
-    background-color: #000000;
-    color: #ffffff;
-    padding: 5px;
-}
+        .header {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            font-size: 18px;
+            padding: 10px;
+        }
 
-.table_component td {
-    border: 0px solid #dededf;
-    background-color: #969696;
-    color: #000000;
-    padding: 5px;
-}
+        .menu {
+            background-color: #969696;
+            text-align: center;
+        }
+
+        .menu td {
+            padding: 10px;
+        }
+
+        .menu img {
+            height: 45px;
+        }
+
+        .content {
+            background-color: #ffffff;
+            padding: 20px;
+            vertical-align: top;
+            height: 100%;
+        }
     </style>
 </head>
+
 <body>
-    <form id="form1" runat="server">
+<form id="form1" runat="server" style="height:100%; display:flex; flex-direction:column;">
 
-        <div class="table_component" role="region" tabindex="0">
-            <table>
-                <thead>
-                    <tr>
-                        <th colspan="7">
-                            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><a href="Home.aspx"><img src="images/home.png" height="50"/></a></td>
-                        <td><a href="Info.aspx"><img src="images/info.png" height="50"/></a></td>
-                        <td><a href="Admin.aspx"><img src="images/admin.png" height="50"/></a></td>
-                        <td><a href="gallery.aspx"><img src="images/gallery.png" height="50"/></a></td>
-                        <td><a href="RefreshInfo.aspx"><img src="images/refreshInfo.png" height="50"/></a></td>
-                        <td><a href="register.aspx"><img src="images/signin.png" height="50"/></a></td>
-                        <td><a href="SignIn.aspx"><img src="images/exit.png" height="50"/></a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
 
-        <div style="margin-top:40px; padding:20px;">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
-        </div>
+    <table>
+        <tr>
+            <td class="header" colspan="7">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+            </td>
+        </tr>
 
-    </form>
+        <tr class="menu">
+            <td><a href="Home.aspx"><img src="images/home.png" /></a></td>
+            <td><a href="Info.aspx"><img src="images/info.png" /></a></td>
+            <td><a href="Admin.aspx"><img src="images/admin.png" /></a></td>
+            <td><a href="gallery.aspx"><img src="images/gallery.png" /></a></td>
+            <td><a href="RefreshInfo.aspx"><img src="images/refreshInfo.png" /></a></td>
+            <td><a href="form.aspx"><img src="images/signin.png" /></a></td>
+            <td><a href="SignIn.aspx"><img src="images/exit.png" /></a></td>
+        </tr>
+
+        <tr>
+            <td class="content" colspan="7">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </td>
+        </tr>
+    </table>
+
+</form>
 </body>
-
 </html>
