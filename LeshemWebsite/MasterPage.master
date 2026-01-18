@@ -72,9 +72,9 @@
             <td><a href="Info.aspx"><img src="images/info.png" /></a></td>
             <td><a href="Admin.aspx"><img src="images/admin.png" /></a></td>
             <td><a href="gallery.aspx"><img src="images/gallery.png" /></a></td>
-            <td><a href="RefreshInfo.aspx"><img src="images/refreshInfo.png" /></a></td>
+            <td><a href="SignIn.aspx"><img src="images/refreshInfo.png" /></a></td>
             <td><a href="form.aspx"><img src="images/signin.png" /></a></td>
-            <td><a href="SignIn.aspx"><img src="images/exit.png" /></a></td>
+            <td><a href="exit.aspx"><img src="images/exit.png" /></a></td>
         </tr>
 
         <tr>

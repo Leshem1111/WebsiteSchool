@@ -164,7 +164,7 @@
 
                     <div class="form-group">
                         <label for="fullName">Enter your full name</label>
-                        <input type="text" id="fullName" name="fullName" />
+                        <input type="text" id="fn" name="fn" />
                     </div>
 
                     <div class="form-group">
@@ -231,5 +231,5 @@
            
         </div>
     </div>
-
+   
 </asp:Content>
