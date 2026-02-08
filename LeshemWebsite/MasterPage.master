@@ -3,87 +3,79 @@
 <!DOCTYPE html>
 <html>
 <head runat="server">
-    <title></title>
-
-    <asp:ContentPlaceHolder ID="head" runat="server" />
+    <title>My Website</title>
 
     <style>
-        html, body {
-            height: 100%;
+        body {
             margin: 0;
-            padding: 0;
-            background-color: #e0e0e0;
-            font-family: Arial;
-        }
-
-        table {
-            width: 100%;
-            height: 100%;
-            border-collapse: collapse;
-        }
-
-        tr {
-            border-bottom: 3px solid #000;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
         }
 
         .header {
-            background-color: #000;
-            color: #fff;
+            background-color: #555;
+            color: white;
             text-align: center;
-            font-size: 18px;
-            padding: 10px;
+            padding: 25px;
+            font-size: 24px;
         }
 
-        .menu {
-            background-color: #969696;
-            text-align: center;
+        .navbar {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
         }
 
-        .menu td {
-            padding: 10px;
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        .menu img {
-            height: 45px;
+        .navbar a:hover {
+            background-color: #555;
         }
 
         .content {
-            background-color: #ffffff;
+            max-width: 1000px;
+            margin: 30px auto;
             padding: 20px;
-            vertical-align: top;
-            height: 100%;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
         }
     </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server" />
 </head>
 
 <body>
-<form id="form1" runat="server" style="height:100%; display:flex; flex-direction:column;">
+    <form id="form1" runat="server">
 
+        <!-- Header -->
+        <div class="header">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+        </div>
 
-    <table>
-        <tr>
-            <td class="header" colspan="7">
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
-            </td>
-        </tr>
+        <!-- Navigation -->
+        <div class="navbar">
+            <a href="Home.aspx">Home</a>
+            <a href="Info.aspx">Info</a>
+            <a href="Admin.aspx">Admin</a>
+            <a href="Gallery.aspx">Gallery</a>
+            <a href="Register.aspx">Register</a>
+            <a href="SignIn.aspx">Sign In</a>
+            <a href="Exit.aspx">Exit</a>
+            <a href="Form.aspx">Form</a>
+        </div>
 
-        <tr class="menu">
-            <td><a href="Home.aspx"><img src="images/home.png" /></a></td>
-            <td><a href="Info.aspx"><img src="images/info.png" /></a></td>
-            <td><a href="Admin.aspx"><img src="images/admin.png" /></a></td>
-            <td><a href="gallery.aspx"><img src="images/gallery.png" /></a></td>
-            <td><a href="SignIn.aspx"><img src="images/refreshInfo.png" /></a></td>
-            <td><a href="form.aspx"><img src="images/signin.png" /></a></td>
-            <td><a href="exit.aspx"><img src="images/exit.png" /></a></td>
-        </tr>
+        <!-- Main Content -->
+        <div class="content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
 
-        <tr>
-            <td class="content" colspan="7">
-                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
-            </td>
-        </tr>
-    </table>
-
-</form>
+    </form>
 </body>
 </html>

@@ -9,4 +9,3 @@
     <h1 style="text-align:center"> Info Page</h1>
     
 </asp:Content>
-

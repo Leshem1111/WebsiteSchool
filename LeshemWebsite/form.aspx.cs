@@ -1,26 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
-public partial class _Default : Page
+public partial class _Default : System.Web.UI.Page
 {
-    public string st = "";
-
+    public string name, number, subject;
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Page.IsPostBack)
+        if (IsPostBack)
         {
-            string fn = Request.Form["fn"];
-            string age = Request.Form["age"];
-
-            string sqlInsert =
-                "INSERT INTO tUsers VALUES (" +
-                "N'" + fn + "'," +
-                age +
-                ")";
-
-            MyAdoHelper.DoQuery("MyDB.mdf", sqlInsert);
-
-            st = "נרשמת בהצלחה!";
+            name = "Name: " + Request.Form["firstName"];
+            number = "Number: " + Request.Form["number"];
+            subject = "Subject: " + Request.Form["subject"];
         }
     }
 }

@@ -20,7 +20,7 @@ using System.Data.SqlClient;
 
 public class MyAdoHelper
 {
-    private const String dbFileName = "~/app_data/MyDB.mdf"; //<ENTER YOUR DATABASE (.mdf) FILE NAME HERE>";
+    private const String dbFileName = "~/app_data/mydb.mdf"; //<ENTER YOUR DATABASE (.mdf) FILE NAME HERE>";
     
 
     public MyAdoHelper()
