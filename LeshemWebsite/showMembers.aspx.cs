@@ -1,47 +1,63 @@
-﻿using Microsoft.SqlServer.Server;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 public partial class _Default : System.Web.UI.Page
 {
     public string st = "";
+
     protected void Page_Load(object sender, EventArgs e)
     {
-        string sql = "SELECT * FROM [dbo].[tUsers]";
-
-        DataTable dt = MyAdoHelper.ExecuteDataTable(sql);
-
-        if (dt.Rows.Count == 0)
+        if (Request.Form["firstName"] != null && Request.Form["lastName"] != null)
         {
-            st = "אין נתונים להצגה";
+            string firstName = Request.Form["firstName"].Trim();
+            string lastName = Request.Form["lastName"].Trim();
 
-        }
-        else {
-            st += "<table border='1'>";
-            st += "<tr>";
-            st += "< שם פרטי>";
-            st += "< שם משפחה>";
-            st += "< מייל>";
-            st += "<גיל>";
-            st += "<תחביבים>";
-            st += "</tr>";
 
-            for(int i = 0; i < dt.Rows.Count; i++)
+            string fullName = (firstName + " " + lastName).Trim();
+
+
+            // Show what was searched
+            st += "<h3>תוצאות חיפוש עבור:</h3>";
+            st += "שם מלא: " + fullName + "<br /><br />";
+
+            // SQL query (matching your real column names)
+            string sql = "SELECT FullName, Email, PhoneNumber, AgeGroup, Hobby " +
+                         "FROM [dbo].[tUsers] " +
+                         "WHERE FullName LIKE '%" + fullName + "%'";
+
+            DataTable dt = MyAdoHelper.ExecuteDataTable(sql);
+
+            if (dt.Rows.Count == 0)
             {
-                st += "<tr>";
-
-                for(int j = 0; j < dt.Columns.Count; j++)
-                {
-                    st += "<td>" + dt.Rows[i][j] + "</td>";
-                }
-                st += "</tr>";
+                st += "אין נתונים להצגה";
             }
-            st += "</table>";
+            else
+            {
+                st += "<table border='1'>";
+                st += "<tr>";
+                st += "<th>שם מלא</th>";
+                st += "<th>אימייל</th>";
+                st += "<th>טלפון</th>";
+                st += "<th>קבוצת גיל</th>";
+                st += "<th>תחביב</th>";
+                st += "</tr>";
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    st += "<tr>";
+
+                    st += "<td>" + dt.Rows[i]["FullName"].ToString() + "</td>";
+                    st += "<td>" + dt.Rows[i]["Email"].ToString() + "</td>";
+                    st += "<td>" + dt.Rows[i]["PhoneNumber"].ToString() + "</td>";
+                    st += "<td>" + dt.Rows[i]["AgeGroup"].ToString() + "</td>";
+                    st += "<td>" + dt.Rows[i]["Hobby"].ToString() + "</td>";
+
+                    st += "</tr>";
+                }
+
+                st += "</table>";
+            }
         }
     }
 }
