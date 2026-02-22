@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Data;
 using System.Web.UI;
 
@@ -22,9 +23,7 @@ public partial class _Default : System.Web.UI.Page
             st += "שם מלא: " + fullName + "<br /><br />";
 
             // SQL query (matching your real column names)
-            string sql = "SELECT FullName, Email, PhoneNumber, AgeGroup, Hobby " +
-                         "FROM [dbo].[tUsers] " +
-                         "WHERE FullName LIKE '%" + fullName + "%'";
+            string sql = "SELECT * FROM tUsers WHERE fullName LIKE N'%" + fullName + "%'";
 
             DataTable dt = MyAdoHelper.ExecuteDataTable(sql);
 
