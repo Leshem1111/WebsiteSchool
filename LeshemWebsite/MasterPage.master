@@ -46,6 +46,22 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             text-align: center;
         }
+        .user-greeting {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background-color: #ffffff;
+    color: #333;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.username {
+    font-weight: bold;
+    color: #007BFF;
+}
     </style>
 
     <asp:ContentPlaceHolder ID="head" runat="server" />
@@ -57,6 +73,9 @@
         <!-- Header -->
         <div class="header">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+                <div class="user-greeting">
+                    שלום <span class="username"><%= Session["username"] ?? "Guest" %></span>
+                </div>
         </div>
 
         <!-- Navigation -->

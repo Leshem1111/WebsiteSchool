@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="showMembers.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <h2>מנהל</h2>
    
 
 </asp:Content>
