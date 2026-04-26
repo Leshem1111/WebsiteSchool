@@ -1,41 +1,119 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Register.aspx.cs" Inherits="Register" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+        <script language ="javascript">
+        function checkAll() {
+            return true;
+        }
+        </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
     <h1>Form</h1>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" Runat="Server">
-     <input type="text" name="name" id="name"/> שם מלא <br />
-    <input type="email" name="email" id="email" /> אימייל<br />
-    <input type="password" name="password" id="password" /> סיסמא<br />
-    <input type="password" name="password2" id="password2" /> אימות סיסמא<br />
-    <select name="tel" id="tel">
-        <option value="050">050</option>
-        <option value="051">051</option>
-        <option value="052">052</option>
-        <option value="053">053</option>
-        <option value="054">054</option>
-        <option value="055">055</option>
-        <option value="056">056</option>
-        <option value="057">057</option>
-        <option value="058">058</option>
-        <option value="059">059</option>
-    </select>
-    <input type="tel" name="tel2" id="tel2" /> מספר טלפון<br />
-    <p>בחר את טווח הגילאים של שלך/ של הילד/ה שלך</p>
-    <input type="radio" name="age" id="little" value="little"/> גילאי גן <br />
-    <input type="radio" name="age" id="first" value="first"/> גיל 7-9 <br />
-     <input type="radio" name="age" id="second " value="second"/> גיל 10-12 <br />
-    <input type="radio" name="age" id="third" value="third"/> גיל 13-15 <br />
-    <input type="radio" name="age" id="fourth" value="fourth"/> גיל 16-18 <br />
-    <input type="radio" name="age" id="fifth" value="fifth"/> +גיל 18 <br />
-    <p>בחר את התחומים שאתה יותר מתעניין בהם</p>
-    <input type="checkbox" name="hobby" id="Math" value="Math"/> מתמטיקה <br />
-    <input type="checkbox" name="hobby" id="Science" value="Science"/> מדעים <br />
-    <input type="checkbox" name="hobby" id="Computer Science" value="Computer Science"/> מדעי המחשב <br />
-    <input type="checkbox" name="hobby" id="English" value="English"/> אנגלית <br />
-    <input type="submit" name="submit" id="submit"/> <br />
+    
+
+    <table border="0" dir="rtl">
+
+        <!-- Full Name -->
+        <tr>
+            <td style="width:150px;">שם מלא</td>
+            <td>
+                <input type="text" name="fullName" id="fullName" style="width:96%; height:25px;" />
+                <span id="fnErr" style="font-size:15px; color:red;"></span>
+            </td>
+            <td></td>
+        </tr>
+
+        <!-- Email -->
+        <tr>
+            <td>אימייל</td>
+            <td>
+                <input type="email" name="email" id="email" style="width:96%; height:25px;" />
+                <span id="emailErr" style="font-size:15px; color:red;"></span>
+            </td>
+            <td></td>
+        </tr>
+
+        <!-- Password -->
+        <tr>
+            <td>סיסמה</td>
+            <td>
+                <input type="password" name="password" id="password" style="width:96%; height:25px;" />
+            </td>
+            <td></td>
+        </tr>
+
+        <!-- Confirm Password -->
+        <tr>
+            <td>אימות סיסמה</td>
+            <td>
+                <input type="password" name="confirmPassword" id="confirmPassword" style="width:96%; height:25px;" />
+            </td>
+            <td></td>
+        </tr>
+
+        <!-- Phone -->
+        <tr>
+            <td>טלפון</td>
+            <td>
+                <select name="prefix" id="prefix">
+                    <option>050</option>
+                    <option>051</option>
+                    <option>052</option>
+                    <option>053</option>
+                    <option>054</option>
+                    <option>055</option>
+                    <option>056</option>
+                    <option>057</option>
+                    <option>058</option>
+                    <option>059</option>
+                </select>
+
+                -
+                <input type="text" name="phone" id="phone" style="width:60%;" />
+            </td>
+            <td></td>
+        </tr>
+
+        <!-- Age (Radio) -->
+        <tr>
+            <td>גיל</td>
+            <td>
+                <input type="radio" name="age" value="pre7"> מתחת ל-7
+                <input type="radio" name="age" value="7-9"> 7-9
+                <input type="radio" name="age" value="10-12"> 10-12
+                <input type="radio" name="age" value="13-15"> 13-15
+                <input type="radio" name="age" value="16-18"> 16-18
+                <input type="radio" name="age" value="18+"> 18+
+            </td>
+            <td></td>
+        </tr>
+
+        <!-- Subjects (Checkbox) -->
+        <tr>
+            <td>מקצועות</td>
+            <td>
+                <input type="checkbox" name="subjects" value="math"> מתמטיקה
+                <input type="checkbox" name="subjects" value="science"> מדעים
+                <input type="checkbox" name="subjects" value="cs"> מדעי המחשב
+                <input type="checkbox" name="subjects" value="english"> אנגלית
+            </td>
+            <td></td>
+        </tr>
+
+        <!-- Submit -->
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="שלח" style="width:120px; height:35px;" />
+            </td>
+            <td></td>
+
+        </tr>
+
+    </table>
+
     <%=st %>
 </asp:Content>

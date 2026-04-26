@@ -68,13 +68,13 @@
 </head>
 
 <body>
-    <form id="form1" runat="server">
+    <form name="form1" method="post" runat="server" onsubmit="return checkAll();">
 
         <!-- Header -->
         <div class="header">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
                 <div class="user-greeting">
-                    שלום <span class="username"><%= Session["username"] ?? "Guest" %></span>
+                   שלום <span class="username"><%# Session["username"] ?? "אורח" %></span>
                 </div>
         </div>
 
