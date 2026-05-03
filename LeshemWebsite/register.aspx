@@ -2,9 +2,38 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
         <script language ="javascript">
-        function checkAll() {
-            return true;
-        }
+            function checkAll() {
+
+                fnErr.innerHTML = "";
+                phoneErr.innerHTML = "";
+
+                f = true;
+
+                if (checkFirstName() == false)
+                    f = false;
+
+                if (checkPhone() == false)
+                    f = false;
+
+                return f
+            }
+            function checkFirstName() {
+                name = document.getElementById("fullName").value;
+
+                if (name.length < 2 || name.length > 30) {
+                    fnErr.innerHTML = "אורך השם לא תקין";
+                    return false;
+                }
+                return true;
+            }
+            function checkPhone() {
+                phone = document.getElementById("phone").value;
+                if (phone.length < 7 || phone.length>7) {
+                    phoneErr.innerHTML = "אורך המספר לא תקין";
+                    return false;
+                }
+                return true;
+            }
         </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -73,6 +102,8 @@
 
                 -
                 <input type="text" name="phone" id="phone" style="width:60%;" />
+                <span id="phoneErr" style="font-size:15px; color:red;"></span>
+
             </td>
             <td></td>
         </tr>
