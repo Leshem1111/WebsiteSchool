@@ -9,6 +9,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <% Session.Abandon();
-    Response.Redirect("login.aspx");
+    Response.Redirect("SignIn.aspx");
     %>
 </asp:Content>

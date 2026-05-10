@@ -86,7 +86,7 @@
             <a href="Gallery.aspx">Gallery</a>
             <a href="Register.aspx">Register</a>
             <a href="SignIn.aspx">Sign In</a>
-            <a href="Exit.aspx">Exit</a>
+            <a href="exit.aspx">Exit</a>
             <a href="Form.aspx">Form</a>
         </div>
 
