@@ -17,20 +17,6 @@
         text-align: center;
         padding: 40px 0;
     }
-
-    .gallery-title {
-        font-size: 42px;
-        color: #333;
-        margin-bottom: 10px;
-        font-weight: bold;
-    }
-
-    .gallery-subtitle {
-        font-size: 18px;
-        color: #777;
-        margin-bottom: 40px;
-    }
-
     .gallery-grid {
         display: flex;
         flex-wrap: wrap;
@@ -81,7 +67,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-            <h1 class="gallery-title">The Gallery</h1>
+            <h1>The Gallery</h1>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">

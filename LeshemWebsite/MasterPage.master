@@ -74,7 +74,7 @@
         <div class="header">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
                 <div class="user-greeting">
-                   שלום <span class="username"><%# Session["username"] ?? "אורח" %></span>
+                 שלום <span class="username"><%= Session["username"] ?? "אורח" %></span>
                 </div>
         </div>
 
@@ -82,12 +82,12 @@
         <div class="navbar">
             <a href="Home.aspx">Home</a>
             <a href="Info.aspx">Info</a>
-            <a href="Admin.aspx">Admin</a>
+            <a id="adminLink" runat="server" href="showMembers.aspx">Members</a>
+            <a id="AdminLinkTwo" runat="server" href="details.aspx">Details</a>
             <a href="Gallery.aspx">Gallery</a>
-            <a href="Register.aspx">Register</a>
-            <a href="SignIn.aspx">Sign In</a>
-            <a href="exit.aspx">Exit</a>
-            <a href="Form.aspx">Form</a>
+            <a id="regLink" runat="server" href="Register.aspx">Register</a>
+            <a id="logInLink" runat="server" href="SignIn.aspx">Sign In</a>
+            <a id="exitLink" runat="server" href="exit.aspx">Exit</a>
         </div>
 
         <!-- Main Content -->

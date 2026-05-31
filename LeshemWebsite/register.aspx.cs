@@ -9,12 +9,14 @@ public partial class Register : Page
     {
         if (Page.IsPostBack)
         {
-            string fn = Request.Form["name"];
+            string fn = Request.Form["fullName"];
             string email = Request.Form["email"];
             string pass = Request.Form["password"];
-            string phone = Request.Form["phoneNumber"]; // חייב להתאים ל-name ב-HTML
-            string age = Request.Form["ageGroup"];
-            string hobby = Request.Form["hobby"];
+            string prefix = Request.Form["prefix"];
+            string phone = Request.Form["phone"];
+            string Fullphone = prefix + phone;
+            string age = Request.Form["age"];
+            string hobby = Request.Form["subjects"];
 
             // בדיקה אם אימייל כבר קיים
             string sqlCheck =
@@ -33,7 +35,7 @@ public partial class Register : Page
                     "N'" + fn + "'," +
                     "N'" + email + "'," +
                     "N'" + pass + "'," +
-                    "N'" + phone + "'," +
+                    "N'" + Fullphone + "'," +
                     "N'" + age + "'," +
                     "N'" + hobby + "'" +
                     ")";
