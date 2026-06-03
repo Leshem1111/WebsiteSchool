@@ -18,7 +18,6 @@ public partial class Register : Page
             string age = Request.Form["age"];
             string hobby = Request.Form["subjects"];
 
-            // בדיקה אם אימייל כבר קיים
             string sqlCheck =
                 "SELECT * FROM tUsers WHERE Email = N'" + email + "'";
 
@@ -40,9 +39,8 @@ public partial class Register : Page
                     "N'" + hobby + "'" +
                     ")";
 
-                MyAdoHelper.DoQuery("Database.mdf", sqlInsert);
+                MyAdoHelper.DoQuery("mydb.mdf", sqlInsert);
 
-                st = "נרשמת בהצלחה!";
                 Response.Redirect("SignIn.aspx");
             }
         }

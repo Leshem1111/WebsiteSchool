@@ -273,17 +273,17 @@
 
     <!-- Subjects -->
     <tr>
-        <td>מקצועות</td>
+        <td>אשמח לראות</td>
 
         <td>
 
-            <input type="checkbox" name="subjects" value="math"> מתמטיקה
+            <input type="checkbox" name="subjects" value="story"> סיפורים
 
-            <input type="checkbox" name="subjects" value="science"> מדעים
+            <input type="checkbox" name="subjects" value="image"> תמונות
 
-            <input type="checkbox" name="subjects" value="cs"> מדעי המחשב
+            <input type="checkbox" name="subjects" value="letters">  מכתבים
 
-            <input type="checkbox" name="subjects" value="english"> אנגלית
+            <input type="checkbox" name="subjects" value="video"> סרטונים
 
             <br />
 
@@ -304,6 +304,8 @@
     </tr>
 
 </table>
-    .
+<div style="color:red; font-size:20px;">
+    <%= st %>
+</div>
 
 </asp:Content>

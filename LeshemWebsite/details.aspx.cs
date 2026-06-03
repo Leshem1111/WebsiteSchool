@@ -31,7 +31,19 @@ public partial class Details : System.Web.UI.Page
     {
         st += "<h2>פריטים</h2>";
 
-        string sql = "SELECT * FROM tDetails";
+        string searchName = Request.Form["searchName"];
+        string sql;
+
+        if (!string.IsNullOrWhiteSpace(searchName))
+        {
+            sql = "SELECT * FROM tDetails WHERE Name LIKE N'%" + searchName + "%'";
+            st += "<p>תוצאות חיפוש עבור: " + searchName + "</p>";
+        }
+        else
+        {
+            sql = "SELECT * FROM tDetails";
+        }
+
         DataTable dt = MyAdoHelper.ExecuteDataTable(sql);
 
         if (dt.Rows.Count == 0)

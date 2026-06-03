@@ -10,7 +10,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" Runat="Server">
         <input type="text" name="firstName" id="firstName" /> שם פרטי<br />
    <input type="text" name="lastName" id="lastName" /> שם משפחה<br />
-    <input type="submit" name="submit" id="submit"/> <br />
+    <input type="submit" name="submit" id="submit" value="חפש"/> <br />
     <%=st %>
 </asp:Content>
 
