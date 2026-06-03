@@ -14,12 +14,13 @@ public partial class Details : System.Web.UI.Page
             string name = Request.Form["name"];
             string dad = Request.Form["dad"];
             string mom = Request.Form["mom"];
+            string story = Request.Form["Story"];
 
-            string sqlInsert =
-                "INSERT INTO tDetails (Name, Dad, Mom) VALUES (" +
-                "N'" + name + "'," +
-                "N'" + dad + "'," +
-                "N'" + mom + "')";
+            string sqlInsert = "INSERT INTO tDetails (name, dad, mom, Story) VALUES (N'"
+                + name + "', N'"
+                + dad + "', N'"
+                + mom + "', N'"
+                + story + "')";
 
             MyAdoHelper.DoQuery("Database.mdf", sqlInsert);
         }
@@ -52,13 +53,14 @@ public partial class Details : System.Web.UI.Page
         }
         else
         {
-            st += "<table border='1' style='border-collapse:collapse; width:60%; margin:auto; text-align:center;'>";
+            st += "<table border='1' style='border-collapse:collapse; width:70%; margin:auto; text-align:center;'>";
 
             st += "<tr style='background:#ddd;'>";
             st += "<th>ID</th>";
             st += "<th>שם</th>";
             st += "<th>אבא</th>";
             st += "<th>אמא</th>";
+            st += "<th>סיפור קצר</th>";
             st += "</tr>";
 
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -68,6 +70,7 @@ public partial class Details : System.Web.UI.Page
                 st += "<td>" + dt.Rows[i]["Name"] + "</td>";
                 st += "<td>" + dt.Rows[i]["Dad"] + "</td>";
                 st += "<td>" + dt.Rows[i]["Mom"] + "</td>";
+                st += "<td>" + dt.Rows[i]["Story"] + "</td>";
                 st += "</tr>";
             }
 

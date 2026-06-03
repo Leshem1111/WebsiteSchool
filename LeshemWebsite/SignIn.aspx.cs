@@ -14,15 +14,13 @@ protected void Page_Load(object sender, EventArgs e)
         string email = Request.Form["email"];
         string pass = Request.Form["password"];
 
-        // 🔴 BLOCK EMPTY INPUTS
         if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(pass))
         {
             st = "יש למלא אימייל וסיסמה";
-            Session["username"] = "אורח";
+            Session.Remove("username");
+            Session.Remove("nihul");
             return;
         }
-
-        // ---------------- ADMIN ----------------
         if (email == "lesheminos6@gmail.com" && pass == "admin1111")
         {
             Session["nihul"] = "ok";
@@ -31,8 +29,6 @@ protected void Page_Load(object sender, EventArgs e)
             Response.Redirect("showMembers.aspx");
             return;
         }
-
-        // ---------------- USER ----------------
         string sql =
             "SELECT * FROM tUsers WHERE Email = N'" + email + "' AND Password = N'" + pass + "'";
 
@@ -40,12 +36,18 @@ protected void Page_Load(object sender, EventArgs e)
 
         if (dt.Rows.Count == 0)
         {
-            Session["username"] = "אורח";
+            Session.Remove("username");
+            Session.Remove("nihul");
             st = "אימייל או סיסמה שגויים";
-            return;
-        }
 
-        Session["username"] = dt.Rows[0]["FullName"].ToString();
-        Response.Redirect("Home.aspx");
+        }
+        else
+        {
+
+            Session.Remove("nihul");
+            Session["username"] = dt.Rows[0]["FullName"].ToString();
+
+            Response.Redirect("Home.aspx");
+        }
     }
 }

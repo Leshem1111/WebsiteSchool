@@ -141,7 +141,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <h1>Register</h1>
+    <h1>הרשמה</h1>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" Runat="Server">
